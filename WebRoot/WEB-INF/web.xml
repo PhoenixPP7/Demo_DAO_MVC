@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Demo_DAO_MVC</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>login.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <filter>
+    <filter-name>encodingFilter</filter-name>
+    <filter-class>mvc.util.filter.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>encodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>empServlet</servlet-name>
+    <servlet-class>mvc.servlet.EmpServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>deptServlet</servlet-name>
+    <servlet-class>mvc.servlet.DeptServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>empServlet</servlet-name>
+    <url-pattern>/pages/back/admin/emp/EmpServlet/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>deptServlet</servlet-name>
+    <url-pattern>/pages/back/admin/dept/DeptServlet/*</url-pattern>
+  </servlet-mapping>
+  <jsp-config>
+    <taglib>
+      <taglib-uri>http://www.mldn.cn/c</taglib-uri>
+      <taglib-location>/WEB-INF/c.tld</taglib-location>
+    </taglib>
+  </jsp-config>
+</web-app>
